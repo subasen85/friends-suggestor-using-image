@@ -24,6 +24,8 @@ public class FriendSuggestor {
 	public String filePath;
 	@Column(name = "Identification")
 	public String identification;
+	@Column(name = "face_id")
+	public String faceId;
 
 	public Integer getId() {
 		return id;
@@ -54,7 +56,15 @@ public class FriendSuggestor {
 	}
 
 	public void setIdentification(String identification) {
-		identification = identification;
+		this.identification = identification;
+	}
+
+	public String getFaceId() {
+		return faceId;
+	}
+
+	public void setFaceId(String faceId) {
+		this.faceId = faceId;
 	}
 
 }
