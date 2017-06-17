@@ -34,27 +34,56 @@
 	<div class="container">
 
 		<div class="starter-template">
-			<h1>Spring Boot Web JSP Example</h1>
-			<h2>Message: ${message}</h2>
+			<h1>Welcome to Friends Suggestor Using Image ! ! !</h1>
+<%-- 			<h2>Message: ${message}</h2> --%>
 		</div>
 
 	</div>
 	<!-- /.container -->
-	
-	Upload Praveen Photo: <br />
-     <form method="POST" action="/upload" enctype="multipart/form-data">
-     <table style="width: 100px;">
-     <tr>
-     <td>
-     <input type="file" name="file" />  
-    <input type="submit" value="Submit" />
-     </td>
+	<br/>
+	<table style="width: 100px;">
+	<tr>
+	     <td>
+     <form method="POST" action="/uploadpraveen" enctype="multipart/form-data">
      
-     </tr>
-     </table>
-    
+     
+	     	 <label>Praveen Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
+	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
+	     
+	    
+   
+     
 </form>
-
+</td>
+ <td>
+  <form method="POST" action="/uploadsenthil" enctype="multipart/form-data">
+<!--      <table style="width: 100px;"> -->
+<!--      <tr> -->
+	  
+	     
+	     	 <label>Senthil Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
+	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
+	 
+	  
+<!--      </tr> -->
+<!--      </table> -->
+</form>
+    </td>
+     <td>
+  <form method="POST" action="/uploadvinoth" enctype="multipart/form-data">
+<!--      <table style="width: 100px;"> -->
+<!--      <tr> -->
+	   
+	     
+	     	 <label>Vinoth Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
+	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
+	    
+<!--      </tr> -->
+ 
+</form>
+ </td>
+   </tr>
+    </table>
 	<script type="text/javascript"
 		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
