@@ -61,6 +61,14 @@
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
 </style>
 
 <body>
@@ -88,15 +96,28 @@
 	<div>
 	<c:choose>
 	 <c:when test="${firstName == 'Senthil' || secondName == 'Senthil'}">
-	 	<h2> ${firstName} can be friend with ${secondName}</h2>
+	 	<h2 align="center"> ${firstName} can be friend with ${secondName}</h2>
 	 </c:when>
 	  <c:otherwise>
-	    	<h2>Invalid Data. Please check your administrator ! ! !</h2>
+	    	<h2 align="center">Invalid Data. Please check your administrator ! ! !</h2>
 	  </c:otherwise>
 	 </c:choose>
-<%-- 	<c:if test="${firstName == 'Senthil' || secondName == 'Senthil'}"> --%>
-<%-- 			<h2> ${firstName} can be friend with ${secondName}</h2> --%>
-<%-- 	</c:if> --%>
+	 
+	 <c:if test="${firstName == 'Senthil' || secondName == 'Senthil'}">
+	 <div align="center"> <img src="../image/senthil.jpg" width="200" height="200" class="rotate90"/></div>
+	 </c:if>
+	 
+	  <c:if test="${firstName == 'Praveen' || secondName == 'Praveen'}">
+	 <div align="center"> <img src="../image/praveen.jpg" width="200" height="200" class="rotate90"/></div>
+	 </c:if>
+	 
+	  <c:if test="${firstName == 'Vinoth' || secondName == 'Vinoth'}">
+	 <div align="center"> <img src="../image/vinoth.jpg" width="200" height="200" class="rotate90"/></div> 
+	 </c:if>
+	 
+	
+	
+
 </div>
 	
 </body>
