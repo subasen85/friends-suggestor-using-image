@@ -46,13 +46,13 @@
      <table style="width: 100px;">
      <tr>
      <td>
-     
+     <input type="file" name="file" />  
+    <input type="submit" value="Submit" />
      </td>
      
      </tr>
      </table>
-    <input type="file" name="file" /> 
-    <input type="submit" value="Submit" />
+    
 </form>
 
 	<script type="text/javascript"
