@@ -40,6 +40,20 @@
 
 	</div>
 	<!-- /.container -->
+	
+	Upload Praveen Photo: <br />
+     <form method="POST" action="/upload" enctype="multipart/form-data">
+     <table style="width: 100px;">
+     <tr>
+     <td>
+     
+     </td>
+     
+     </tr>
+     </table>
+    <input type="file" name="file" /> 
+    <input type="submit" value="Submit" />
+</form>
 
 	<script type="text/javascript"
 		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
