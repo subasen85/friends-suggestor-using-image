@@ -110,6 +110,19 @@
 </form>
  </td>
    </tr>
+   <tr>
+   <td>&nbsp;</td>
+   </tr>
+   <tr>
+   <td>
+     <form method="POST" action="/individualclear" enctype="multipart/form-data">
+	    	 <label><input type="submit" name="button" id="button" value="Clear" /></label>
+	    	
+
+ 
+</form>
+   </td> 
+   </tr>
     </table>
 	<script type="text/javascript"
 		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
