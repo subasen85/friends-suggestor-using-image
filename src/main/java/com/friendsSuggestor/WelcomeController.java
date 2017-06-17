@@ -197,7 +197,7 @@ public class WelcomeController {
 				e.printStackTrace();
 			}
 //		        String savePath = "C:" + File.separator + SAVE_DIR; //specify your path here
-		            File fileSaveDir=new File(UPLOADED_INDIVIDUAL_FOLDER);
+		            File fileSaveDir=new File(UPLOADED_GROUP_FOLDER);
 		            if(!fileSaveDir.exists()){
 		                fileSaveDir.mkdir();
 		            }
@@ -214,7 +214,7 @@ public class WelcomeController {
   String fileName=extractFileName(part);
   System.out.println("praveen uploading...");
   try {
-			part.write(UPLOADED_INDIVIDUAL_FOLDER + File.separator + fileName);
+			part.write(UPLOADED_GROUP_FOLDER + File.separator + fileName);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -222,7 +222,7 @@ public class WelcomeController {
   System.out.println("praveen uploaded successfully..");
 		FriendSuggestor friendSuggestor = new FriendSuggestor();
 		friendSuggestor.setName(file.getOriginalFilename());
-		friendSuggestor.setFilePath(UPLOADED_INDIVIDUAL_FOLDER);
+		friendSuggestor.setFilePath(UPLOADED_GROUP_FOLDER);
 		friendSuggestor.setIdentification("G");
 		System.out.println("Enter into uploadpraveen"+file.getOriginalFilename());
 		model.put("message", this.message);
