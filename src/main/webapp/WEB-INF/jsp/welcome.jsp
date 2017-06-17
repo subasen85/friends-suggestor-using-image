@@ -15,19 +15,67 @@
 <link href="${jstlCss}" rel="stylesheet" />
 
 </head>
+<style>
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
 <body>
 
 	<nav class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Spring Boot</a>
+				<a class="navbar-brand" href="#">Friends Suggester</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-				</ul>
+ <div class="dropdown">
+  <button class="dropbtn" >Select Here</button>
+  <div class="dropdown-content">
+    <a href="#">Individual Upload</a>
+    <a href="#">Group Upload</a>
+    <a href="#">Suggest Friends</a>
+  </div>
+</div>
 			</div>
+
+  
 		</div>
 	</nav>
 
@@ -35,50 +83,29 @@
 
 		<div class="starter-template">
 			<h1>Welcome to Friends Suggestor Using Image ! ! !</h1>
-<%-- 			<h2>Message: ${message}</h2> --%>
 		</div>
 
 	</div>
-	<!-- /.container -->
 	<br/>
 	<table style="width: 100px;">
 	<tr>
 	     <td>
      <form method="POST" action="/uploadpraveen" enctype="multipart/form-data">
-     
-     
 	     	 <label>Praveen Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
 	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
-	     
-	    
-   
-     
+
 </form>
 </td>
  <td>
   <form method="POST" action="/uploadsenthil" enctype="multipart/form-data">
-<!--      <table style="width: 100px;"> -->
-<!--      <tr> -->
-	  
-	     
 	     	 <label>Senthil Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
 	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
-	 
-	  
-<!--      </tr> -->
-<!--      </table> -->
 </form>
     </td>
      <td>
   <form method="POST" action="/uploadvinoth" enctype="multipart/form-data">
-<!--      <table style="width: 100px;"> -->
-<!--      <tr> -->
-	   
-	     
 	     	 <label>Vinoth Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
 	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
-	    
-<!--      </tr> -->
  
 </form>
  </td>
