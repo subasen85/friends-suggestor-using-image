@@ -69,7 +69,7 @@
   <button class="dropbtn" >Select Here</button>
   <div class="dropdown-content">
     <a href="#">Individual Upload</a>
-    <a href="#">Group Upload</a>
+    <a href="/group">Group Upload</a>
     <a href="#">Suggest Friends</a>
   </div>
 </div>

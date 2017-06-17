@@ -1,5 +1,7 @@
 package com.friendsSuggestor.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +28,22 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 		return friendSuggestor;
 	}
 	
+	
+	public void individualClear(){
+		List<FriendSuggestor> indListFriendSuggestor = (List<FriendSuggestor>) friendSuggestorRepository.findAll();
+		for(FriendSuggestor f : indListFriendSuggestor){
+			if(f.getIdentification().equals("I")){
+				friendSuggestorRepository.delete(f);
+			}
+		}
+	}
+	
+	public void groupClear(){
+		List<FriendSuggestor> indListFriendSuggestor = (List<FriendSuggestor>) friendSuggestorRepository.findAll();
+		for(FriendSuggestor f : indListFriendSuggestor){
+			if(f.getIdentification().equals("G")){
+				friendSuggestorRepository.delete(f);
+			}
+		}
+	}
 }
