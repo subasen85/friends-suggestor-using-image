@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -63,9 +68,17 @@
 	<nav class="navbar navbar-inverse">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Suggest Friends</a>
-			<div id="navbar" class="collapse navbar-collapse"></div>
-
+			<a class="navbar-brand" href="#">Friends Suggester</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+ <div class="dropdown">
+  <button class="dropbtn" >Select Here</button>
+  <div class="dropdown-content">
+    <a href="/">Individual Upload</a>
+    <a href="/group">Group Upload</a>
+    <a href="/readallname">Suggest Friends</a>
+  </div>
+</div>
 
 
 		</div>
@@ -73,7 +86,17 @@
 	</div>
 	</nav>
 	<div>
-			<h2> ${firstName} can be friend with ${secondName}</h2>
+	<c:choose>
+	 <c:when test="${firstName == 'Senthil' || secondName == 'Senthil'}">
+	 	<h2> ${firstName} can be friend with ${secondName}</h2>
+	 </c:when>
+	  <c:otherwise>
+	    	<h2>Invalid Data. Please check your administrator ! ! !</h2>
+	  </c:otherwise>
+	 </c:choose>
+<%-- 	<c:if test="${firstName == 'Senthil' || secondName == 'Senthil'}"> --%>
+<%-- 			<h2> ${firstName} can be friend with ${secondName}</h2> --%>
+<%-- 	</c:if> --%>
 </div>
 	
 </body>
