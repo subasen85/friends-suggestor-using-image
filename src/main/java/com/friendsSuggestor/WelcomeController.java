@@ -179,7 +179,11 @@ public class WelcomeController {
 	
 	@RequestMapping("/individualclear")
 	public String individualclear(Map<String, Object> model) {
-		
+		File directory = new File(UPLOADED_INDIVIDUAL_FOLDER);
+		File files[] = directory.listFiles();
+		for(int index = 0; index < files.length; index++){
+			files[index].delete();
+		}
 		friendSuggestorService.individualClear();
 		model.put("message", this.message);
 		return "welcome";
@@ -187,6 +191,12 @@ public class WelcomeController {
 	
 	@RequestMapping("/groupclear")
 	public String groupclear(Map<String, Object> model) {
+		File directory = new File(UPLOADED_GROUP_FOLDER);
+		File files[] = directory.listFiles();
+		for(int index = 0; index < files.length; index++){
+			files[index].delete();
+		}
+	
 		friendSuggestorService.groupClear();
 		 
 		model.put("message", this.message);
