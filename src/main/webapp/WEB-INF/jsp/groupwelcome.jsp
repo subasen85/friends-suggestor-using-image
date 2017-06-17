@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
 <html lang="en">
 <head>
 
@@ -12,7 +12,7 @@
 	<link href="${springCss}" rel="stylesheet" />
 	 -->
 <c:url value="/css/main.css" var="jstlCss" />
-<link href="${jstlCss}" rel="stylesheet" />
+<%-- <link href="${jstlCss}" rel="stylesheet" /> --%>
 
 </head>
 <style>
@@ -62,7 +62,7 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Friends Suggester Group!!!!!</a>
+				<a class="navbar-brand" href="#">Friends Suggester</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
  <div class="dropdown">
@@ -90,27 +90,28 @@
 	<table style="width: 100px;">
 	<tr>
 	     <td>
-     <form method="POST" action="/uploadpraveen" enctype="multipart/form-data">
-	     	 <label>Praveen Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
+     <form method="POST" action="/groupupload1" enctype="multipart/form-data">
+	     	 <label>Picture 1 &nbsp;<input type="file" name="file" id="file" /></label>
 	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
 
 </form>
 </td>
+</tr>
+</table>
+<br/><br/>
+<table style="width: 100px;">
+<tr>
  <td>
-  <form method="POST" action="/uploadsenthil" enctype="multipart/form-data">
-	     	 <label>Senthil Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
+  <form method="POST" action="/groupupload2" enctype="multipart/form-data">
+	     	 <label>Picture 2 &nbsp;<input type="file" name="file" id="file" /></label>
 	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
 </form>
     </td>
      <td>
-  <form method="POST" action="/uploadvinoth" enctype="multipart/form-data">
-	     	 <label>Vinoth Photo Upload &nbsp;<input type="file" name="file" id="file" /></label>
-	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
  
-</form>
  </td>
    </tr>
-    </table>
+ </table>
 	<script type="text/javascript"
 		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
