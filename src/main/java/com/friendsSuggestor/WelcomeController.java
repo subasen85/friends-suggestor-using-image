@@ -28,6 +28,9 @@ import com.friendsSuggestor.service.FriendSuggestorService;
 public class WelcomeController {
 	
 	@Autowired FriendSuggestorService friendSuggestorService;
+	
+	@Autowired
+	FriendSuggestorService suggestorService;
 
 	private static String UPLOADED_INDIVIDUAL_FOLDER = "D://Images//Individual//";
 	private static String UPLOADED_GROUP_FOLDER = "D://Images//Group//";
@@ -265,6 +268,14 @@ public class WelcomeController {
 	        }
 	    }
 	    return "";
+	}
+	
+	@RequestMapping("/readallname")
+	public String readallName(Map<String, Object> model){
+		Map<Integer,String> mapValue = suggestorService.readall();
+		model.put("firstName", mapValue.get(1));
+		model.put("secondName", mapValue.get(2));
+		return  "suggestFriend";
 	}
 
 

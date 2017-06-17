@@ -58,9 +58,12 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 		int mapId = 1;
 		Map<Integer,String> mapValue = new HashMap<Integer,String>();
 		for(FriendSuggestor friendobj : friendSuggestor){
+			System.out.println("friendobj = = >"+friendobj);
+			System.out.println("friendobj = = >"+friendobj.getId());
+			System.out.println("friendobj = = >"+friendobj.getIdentification());
 			if(friendobj.getIdentification().equalsIgnoreCase("G")){
 				String[] splitvalue = friendobj.getName().toString().split("_");
-				for(int i=0;i<=splitvalue.length;i++){
+				for(int i=0;i<splitvalue.length;i++){
 				if("senthil".equalsIgnoreCase(splitvalue[i])){
 					senthilCount++;
 				}
@@ -74,6 +77,9 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 				
 			}
 		}
+		System.out.println(senthilCount);
+		System.out.println(praveenCount);
+		System.out.println(vinothCount);
 		if(senthilCount==1){
 			mapValue.put(mapId, "Senthil");
 			mapId++;

@@ -70,7 +70,7 @@
   <div class="dropdown-content">
     <a href="#">Individual Upload</a>
     <a href="/group">Group Upload</a>
-    <a href="#">Suggest Friends</a>
+    <a href="/readallname">Suggest Friends</a>
   </div>
 </div>
 			</div>
