@@ -28,8 +28,7 @@ public class WelcomeController {
 	}
 	
 	@RequestMapping("/uploadpraveen")
-	public String uploadpraveen(Map<String, Object> model,@RequestParam("file") MultipartFile file,
-            RedirectAttributes redirectAttributes) {
+	public String uploadpraveen(Map<String, Object> model,@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
 		FriendSuggestor friendSuggestor = new FriendSuggestor();
 		friendSuggestor.setName(file.getOriginalFilename());
 		friendSuggestor.setFilePath(UPLOADED_FOLDER);
@@ -40,17 +39,25 @@ public class WelcomeController {
 	}
 
 	@RequestMapping("/uploadsenthil")
-	public String uploadsenthil(Map<String, Object> model) {
+	public String uploadsenthil(Map<String, Object> model ,@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
 		
-		System.out.println("Enter into uploadsenthil");
+		FriendSuggestor friendSuggestor = new FriendSuggestor();
+		friendSuggestor.setName(file.getOriginalFilename());
+		friendSuggestor.setFilePath(UPLOADED_FOLDER);
+		friendSuggestor.setIdentification("I");
+		System.out.println("Enter into uploadpraveen"+file.getOriginalFilename());
 		model.put("message", this.message);
 		return "welcome";
 	}
 
 	@RequestMapping("/uploadvinoth")
-	public String uploadvinoth(Map<String, Object> model) {
+	public String uploadvinoth(Map<String, Object> model ,@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
 		
-		System.out.println("Enter into uploadvinoth");
+		FriendSuggestor friendSuggestor = new FriendSuggestor();
+		friendSuggestor.setName(file.getOriginalFilename());
+		friendSuggestor.setFilePath(UPLOADED_FOLDER);
+		friendSuggestor.setIdentification("I");
+		System.out.println("Enter into uploadpraveen"+file.getOriginalFilename());
 		model.put("message", this.message);
 		return "welcome";
 	}
