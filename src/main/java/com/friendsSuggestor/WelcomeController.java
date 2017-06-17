@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +20,14 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.friendsSuggestor.model.FriendSuggestor;
+import com.friendsSuggestor.service.FriendSuggestorService;
 
 
 @Controller
 
 public class WelcomeController {
+	
+	@Autowired FriendSuggestorService friendSuggestorService;
 
 	private static String UPLOADED_INDIVIDUAL_FOLDER = "D://Images//Individual//";
 	private static String UPLOADED_GROUP_FOLDER = "D://Images//Group//";
@@ -78,6 +82,7 @@ public class WelcomeController {
 		friendSuggestor.setName(file.getOriginalFilename());
 		friendSuggestor.setFilePath(UPLOADED_INDIVIDUAL_FOLDER);
 		friendSuggestor.setIdentification("I");
+		friendSuggestorService.save(friendSuggestor);
 		System.out.println("Enter into uploadpraveen"+file.getOriginalFilename());
 		model.put("message", this.message);
 		return "welcome";
@@ -121,6 +126,7 @@ public class WelcomeController {
 		friendSuggestor.setName(file.getOriginalFilename());
 		friendSuggestor.setFilePath(UPLOADED_INDIVIDUAL_FOLDER);
 		friendSuggestor.setIdentification("I");
+		friendSuggestorService.save(friendSuggestor);
 		System.out.println("Enter into uploadpraveen"+file.getOriginalFilename());
 		model.put("message", this.message);
 		return "welcome";
@@ -164,6 +170,7 @@ public class WelcomeController {
 		friendSuggestor.setName(file.getOriginalFilename());
 		friendSuggestor.setFilePath(UPLOADED_INDIVIDUAL_FOLDER);
 		friendSuggestor.setIdentification("I");
+		friendSuggestorService.save(friendSuggestor);
 		System.out.println("Enter into uploadpraveen"+file.getOriginalFilename());
 		model.put("message", this.message);
 		return "welcome";
@@ -173,14 +180,14 @@ public class WelcomeController {
 	@RequestMapping("/individualclear")
 	public String individualclear(Map<String, Object> model) {
 		
-		 
+		friendSuggestorService.individualClear();
 		model.put("message", this.message);
 		return "welcome";
 	}
 	
 	@RequestMapping("/groupclear")
 	public String groupclear(Map<String, Object> model) {
-		
+		friendSuggestorService.groupClear();
 		 
 		model.put("message", this.message);
 		return "groupwelcome";
@@ -232,6 +239,7 @@ public class WelcomeController {
 		friendSuggestor.setName(file.getOriginalFilename());
 		friendSuggestor.setFilePath(UPLOADED_GROUP_FOLDER);
 		friendSuggestor.setIdentification("G");
+		friendSuggestorService.save(friendSuggestor);
 		System.out.println("Enter into uploadpraveen"+file.getOriginalFilename());
 		model.put("message", this.message);
 		return "groupwelcome";
