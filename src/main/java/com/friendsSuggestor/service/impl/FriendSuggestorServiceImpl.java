@@ -1,6 +1,8 @@
 package com.friendsSuggestor.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,5 +47,45 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 				friendSuggestorRepository.delete(f);
 			}
 		}
+	}
+	
+	public Map<Integer,String> readall(){
+		List<FriendSuggestor> friendSuggestor=(List<FriendSuggestor>) friendSuggestorRepository.findAll();
+		System.out.println("Friendsuggestor"+friendSuggestor);
+		int senthilCount = 0;
+		int praveenCount = 0;
+		int vinothCount = 0;
+		int mapId = 1;
+		Map<Integer,String> mapValue = new HashMap<Integer,String>();
+		for(FriendSuggestor friendobj : friendSuggestor){
+			if(friendobj.getIdentification().equalsIgnoreCase("G")){
+				String[] splitvalue = friendobj.getName().toString().split("_");
+				for(int i=0;i<=splitvalue.length;i++){
+				if("senthil".equalsIgnoreCase(splitvalue[i])){
+					senthilCount++;
+				}
+				if("praveen".equalsIgnoreCase(splitvalue[i])){
+									praveenCount++;
+								}
+				if("vinoth".equalsIgnoreCase(splitvalue[i])){
+					vinothCount++;
+				}
+				}
+				
+			}
+		}
+		if(senthilCount==1){
+			mapValue.put(mapId, "Senthil");
+			mapId++;
+		}
+		if(praveenCount==1){
+			mapValue.put(mapId, "Praveen");
+			mapId++;
+		}
+		if(vinothCount==1){
+			mapValue.put(mapId, "Vinoth");
+		}
+		
+		return mapValue;
 	}
 }
