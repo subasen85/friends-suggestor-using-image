@@ -18,8 +18,8 @@ public class GroupController {
 	String senthil="senthil";		
 			
 	@RequestMapping("/readimage")
-	public FriendSuggestor readimage(String name, String identification) {
-		FriendSuggestor friendSuggestor = suggestorService.read(name,identification);
+	public FriendSuggestor readimage(String name) {
+		FriendSuggestor friendSuggestor = suggestorService.read(name);
 		return friendSuggestor;
 	}
 	
@@ -30,6 +30,7 @@ public class GroupController {
 		model.put("secondName", mapValue.get(1));
 		return  "suggestFriend";
 	}
+	
 
 }
 

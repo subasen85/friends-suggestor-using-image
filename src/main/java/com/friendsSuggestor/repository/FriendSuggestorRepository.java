@@ -11,5 +11,5 @@ import com.friendsSuggestor.model.FriendSuggestor;
 
 public interface FriendSuggestorRepository extends CrudRepository <FriendSuggestor,BigInteger>  {
 
-	public FriendSuggestor findFriendSuggestorByNameAndIdentification(String name, String identification);
+	public FriendSuggestor findFriendSuggestorByName(String name);
 }

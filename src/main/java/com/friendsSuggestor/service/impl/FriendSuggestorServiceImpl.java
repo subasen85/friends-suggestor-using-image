@@ -25,8 +25,8 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 	}
 
 	@Override
-	public FriendSuggestor read(String name, String identification) {
-		FriendSuggestor friendSuggestor=friendSuggestorRepository.findFriendSuggestorByNameAndIdentification(name,identification);
+	public FriendSuggestor read(String name) {
+		FriendSuggestor friendSuggestor=friendSuggestorRepository.findFriendSuggestorByName(name);
 		return friendSuggestor;
 	}
 	
@@ -62,7 +62,11 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 			System.out.println("friendobj = = >"+friendobj.getId());
 			System.out.println("friendobj = = >"+friendobj.getIdentification());
 			if(friendobj.getIdentification().equalsIgnoreCase("G")){
-				String[] splitvalue = friendobj.getName().toString().split("_");
+//				String splitvalue=FriendSuggestorServiceImpl.replaceLastFour(friendobj.getName());
+				String result = friendobj.getName().toString().substring(0, friendobj.getName().toString().indexOf("."));
+				System.out.println("result"+result);
+				String[] splitvalue = result.split("_");
+				System.out.println(" - - "+result.length());
 				for(int i=0;i<splitvalue.length;i++){
 				if("senthil".equalsIgnoreCase(splitvalue[i])){
 					senthilCount++;
@@ -94,4 +98,9 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 		
 		return mapValue;
 	}
+	 public static String replaceLastFour(String s) {
+	        int length = s.length();
+	        if (length < 4) return "Error: The provided string is not greater than four characters long.";
+	        return s.substring(0, length - 4) + "****";
+	    }
 }

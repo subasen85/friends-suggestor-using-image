@@ -7,7 +7,7 @@ import com.friendsSuggestor.model.FriendSuggestor;
 public interface FriendSuggestorService {
 
 	public FriendSuggestor save(FriendSuggestor friendSuggestor);
-	public FriendSuggestor read(String name, String identification);
+	public FriendSuggestor read(String name);
 	public void individualClear();
 	public Map<Integer,String> readall();
 	public void groupClear();
