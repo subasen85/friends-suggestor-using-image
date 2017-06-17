@@ -249,10 +249,7 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb -->
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-mongodb</artifactId>
-		</dependency>
+	
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons-core -->
 		<dependency>
