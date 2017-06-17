@@ -94,4 +94,14 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 		
 		return mapValue;
 	}
+
+	@Override
+	public List<FriendSuggestor> readallDBEntries() {
+		return (List<FriendSuggestor>) friendSuggestorRepository.findAll();
+	}
+
+	@Override
+	public FriendSuggestor findFriendSuggestorByFaceId(String faceId) {
+		return friendSuggestorRepository.findFriendSuggestorByFaceId(faceId);
+	}
 }
