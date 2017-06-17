@@ -1,5 +1,7 @@
 package com.friendsSuggestor.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,12 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 	public FriendSuggestor read(String name, String identification) {
 		FriendSuggestor friendSuggestor=friendSuggestorRepository.findFriendSuggestorByNameAndIdentification(name,identification);
 		return friendSuggestor;
+	}
+
+	@Override
+	public List<FriendSuggestor> readAll() {
+		friendSuggestorRepository.findAll();
+		return null;
 	}
 	
 }
