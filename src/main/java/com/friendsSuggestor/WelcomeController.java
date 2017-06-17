@@ -187,7 +187,15 @@ public class WelcomeController {
 	}
 	
 	@RequestMapping("/group")
-	public String group(Map<String, Object> model  , @RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes , HttpServletRequest request , HttpServletResponse response) {
+	public String group(Map<String, Object> model ) {
+		
+		
+		model.put("message", this.message);
+		return "groupwelcome";
+	}
+	
+	@RequestMapping("/groupupload")
+	public String groupupload(Map<String, Object> model  , @RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes , HttpServletRequest request , HttpServletResponse response) {
 		
 		 response.setContentType("text/html;charset=UTF-8");
 		    try {

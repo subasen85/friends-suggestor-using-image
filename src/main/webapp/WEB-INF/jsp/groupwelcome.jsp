@@ -90,7 +90,7 @@
 	<table style="width: 100px;">
 	<tr>
 	     <td>
-     <form method="POST" action="/groupupload1" enctype="multipart/form-data">
+     <form method="POST" action="/groupupload" enctype="multipart/form-data">
 	     	 <label>Picture 1 &nbsp;<input type="file" name="file" id="file" /></label>
 	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
 
@@ -102,7 +102,7 @@
 <table style="width: 100px;">
 <tr>
  <td>
-  <form method="POST" action="/groupupload2" enctype="multipart/form-data">
+  <form method="POST" action="/groupupload" enctype="multipart/form-data">
 	     	 <label>Picture 2 &nbsp;<input type="file" name="file" id="file" /></label>
 	    	 <label><input type="submit" name="button" id="button" value="Submit" /></label>
 </form>
