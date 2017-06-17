@@ -272,9 +272,16 @@ public class WelcomeController {
 	
 	@RequestMapping("/readallname")
 	public String readallName(Map<String, Object> model){
+		System.out.println("Enter into readall..1");
 		Map<Integer,String> mapValue = suggestorService.readall();
+		System.out.println("Enter into readall..2");
 		model.put("firstName", mapValue.get(1));
 		model.put("secondName", mapValue.get(2));
+		System.out.println("Enter into readall..3");
+//		model.put("errMsg", "False");
+//		if(!mapValue.get(1).equalsIgnoreCase("senthil") && !mapValue.get(2).equalsIgnoreCase("senthil")){
+//			model.put("errMsg", "True");
+//		}
 		return  "suggestFriend";
 	}
 

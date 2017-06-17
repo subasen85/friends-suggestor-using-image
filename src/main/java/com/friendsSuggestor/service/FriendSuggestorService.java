@@ -16,4 +16,3 @@ public interface FriendSuggestorService {
 	public FriendSuggestor findFriendSuggestorByFaceId(String faceId);
 }
 
-	

@@ -68,7 +68,7 @@
  <div class="dropdown">
   <button class="dropbtn" >Select Here</button>
   <div class="dropdown-content">
-    <a href="#">Individual Upload</a>
+    <a href="/">Individual Upload</a>
     <a href="/group">Group Upload</a>
     <a href="/readallname">Suggest Friends</a>
   </div>
