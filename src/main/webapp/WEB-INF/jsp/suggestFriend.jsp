@@ -73,7 +73,7 @@
 	</div>
 	</nav>
 	<div>
-			<H1>vinoth and senthil can be a friend</H1>
+			<h2> ${firstName} can be friend with ${secondName}</h2>
 </div>
 	
 </body>
