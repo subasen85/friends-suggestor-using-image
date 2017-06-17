@@ -18,10 +18,11 @@ public class WelcomeController {
 	
 //	@Autowired FriendSuggestor friendSuggestor;
 	// inject via application.properties
-	@Value("${welcome.message:test}")
+	//@Value("${welcome.message}")
 	private String message = "Hello World";
 
 	@RequestMapping("/")
+	//Map<String, Object> model
 	public String welcome(Map<String, Object> model) {
 		model.put("message", this.message);
 		return "welcome";
@@ -60,6 +61,14 @@ public class WelcomeController {
 		System.out.println("Enter into uploadpraveen"+file.getOriginalFilename());
 		model.put("message", this.message);
 		return "welcome";
+	}
+	
+	@RequestMapping("/group")
+	public String group(Map<String, Object> model ) {
+		
+		
+		model.put("message", this.message);
+		return "groupwelcome";
 	}
 
 }
