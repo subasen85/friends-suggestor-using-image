@@ -23,7 +23,7 @@ public class FriendSuggestor {
 	@Column(name = "path")
 	public String filePath;
 	@Column(name = "Identification")
-	public String Identification;
+	public String identification;
 
 	public Integer getId() {
 		return id;
@@ -50,11 +50,11 @@ public class FriendSuggestor {
 	}
 
 	public String getIdentification() {
-		return Identification;
+		return identification;
 	}
 
 	public void setIdentification(String identification) {
-		Identification = identification;
+		identification = identification;
 	}
 
 }

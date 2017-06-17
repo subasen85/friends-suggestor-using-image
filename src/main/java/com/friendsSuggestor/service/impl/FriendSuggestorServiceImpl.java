@@ -20,5 +20,10 @@ public class FriendSuggestorServiceImpl implements FriendSuggestorService {
 		return frndSuggt;
 	}
 
+	@Override
+	public FriendSuggestor read(String name, String identification) {
+		FriendSuggestor friendSuggestor=friendSuggestorRepository.findFriendSuggestorByNameAndIdentification(name,identification);
+		return friendSuggestor;
+	}
 	
 }
