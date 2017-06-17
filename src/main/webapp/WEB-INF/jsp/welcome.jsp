@@ -69,8 +69,8 @@
   <button class="dropbtn" >Select Here</button>
   <div class="dropdown-content">
     <a href="#">Individual Upload</a>
-    <a href="#">Group Upload</a>
-    <a href="#">Suggest Friends</a>
+    <a href="/group">Group Upload</a>
+    <a href="/readallname">Suggest Friends</a>
   </div>
 </div>
 			</div>
@@ -109,6 +109,19 @@
  
 </form>
  </td>
+   </tr>
+   <tr>
+   <td>&nbsp;</td>
+   </tr>
+   <tr>
+   <td>
+     <form method="POST" action="/individualclear" enctype="multipart/form-data">
+	    	 <label><input type="submit" name="button" id="button" value="Clear" /></label>
+	    	
+
+ 
+</form>
+   </td> 
    </tr>
     </table>
 	<script type="text/javascript"
